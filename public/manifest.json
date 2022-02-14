@@ -1,6 +1,6 @@
 {
-  "short_name": "Bank Accounts",
-  "name": "Bank Accounts",
+  "short_name": "Bitcoin Playground",
+  "name": "Bitcoin Playground",
   "icons": [],
   "start_url": ".",
   "display": "standalone",

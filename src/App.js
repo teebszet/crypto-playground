@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Transactions from './routes/Transactions';
-import Transfer from './routes/Transfer';
+import MainLayout from './layouts/MainLayout';
 import './App.scss';
 
 export default function App() {
@@ -8,13 +7,9 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Transactions />
-        </Route>
-        <Route path="/transactions">
-          <Transactions />
-        </Route>
-        <Route path="/transfer">
-          <Transfer />
+          <MainLayout>
+            <div>this is my app content</div>
+          </MainLayout>
         </Route>
       </Switch>
     </Router>
