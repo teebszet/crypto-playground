@@ -1,7 +1,14 @@
 import './Button.scss';
 
-export const Button: React.FC = ({ children }) => {
-  return <button className="primary-button">{children}</button>;
+type ButtonProps = {};
+export const Button: React.FC<
+  ButtonProps & React.HTMLAttributes<HTMLButtonElement>
+> = ({ children, ...props }) => {
+  return (
+    <button {...props} className="primary-button">
+      {children}
+    </button>
+  );
 };
 
 export default Button;
