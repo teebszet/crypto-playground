@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import './MainLayout.scss';
 
-export default function MainLayout({ children }) {
+export const MainLayout: React.FC = ({ children }) => {
   const history = useHistory();
   // TODO useMemo
   const handleClickBack = () => {
@@ -20,4 +20,6 @@ export default function MainLayout({ children }) {
       <section className="main-layout__content">{children}</section>
     </div>
   );
-}
+};
+
+export default MainLayout;

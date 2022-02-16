@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import './Landing.scss';
 
-const landingListItems = [
+const landingListItems: LandingListItemProps[] = [
   {
     title: 'Mnemonic Words',
     description: 'Generate random mnemonic words using BIP-39',
@@ -22,7 +22,17 @@ const landingListItems = [
   },
 ];
 
-export const LandingListItem = ({ title, description, route }) => {
+type LandingListItemProps = {
+  title: string;
+  description: string;
+  route: string;
+};
+
+export const LandingListItem: React.FC<LandingListItemProps> = ({
+  title,
+  description,
+  route,
+}) => {
   return (
     <li>
       <Link to={route}>
@@ -33,7 +43,7 @@ export const LandingListItem = ({ title, description, route }) => {
   );
 };
 
-export default function Landing() {
+export const Landing = () => {
   return (
     <MainLayout>
       <section className="landing-actions">
@@ -48,4 +58,6 @@ export default function Landing() {
       </section>
     </MainLayout>
   );
-}
+};
+
+export default Landing;

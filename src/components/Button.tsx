@@ -1,7 +1,7 @@
 import './Button.scss';
 
-export default function Button({children}) {
-  return (
-    <button className="primary-button">{children}</button>
-  );
-}
+export const Button: React.FC = ({ children }) => {
+  return <button className="primary-button">{children}</button>;
+};
+
+export default Button;
