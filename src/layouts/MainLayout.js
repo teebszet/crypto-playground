@@ -1,13 +1,21 @@
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './MainLayout.scss';
 
 export default function MainLayout({ children }) {
-  // TODO create a back button
-  // const history = useHistory();
+  const history = useHistory();
+  // TODO useMemo
+  const handleClickBack = () => {
+    history.goBack();
+  };
   return (
     <div className="main-layout">
       <header className="main-layout__header">
-        <h1>My App</h1>
+        {history.length > 1 && (
+          <div className="header__button-container">
+            <button onClick={handleClickBack}>{'←'}</button>
+          </div>
+        )}
+        <h1>Bitcoin Playground</h1>
       </header>
       <section className="main-layout__content">{children}</section>
     </div>

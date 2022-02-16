@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
+import Landing from './routes/Landing';
 import './App.scss';
 
 export default function App() {
@@ -7,9 +7,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <MainLayout>
-            <div>this is my app content</div>
-          </MainLayout>
+          <Landing/>
         </Route>
       </Switch>
     </Router>
