@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Landing from './routes/Landing';
 import Mnemonic from './routes/Mnemonic';
+import HdSegWit from './routes/HdSegWit';
 import './App.scss';
 
 export type RouteProps = {
@@ -24,7 +25,7 @@ const routes: RouteItem[] = [
     description: 'Generate random mnemonic words using BIP-39',
   },
   {
-    Component: Mnemonic,
+    Component: HdSegWit,
     route: '/hd-segwit',
     title: 'HD SegWit',
     description:

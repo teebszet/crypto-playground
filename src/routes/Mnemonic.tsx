@@ -11,12 +11,21 @@ export const MnemonicContainer: React.FC = () => {
     setMnemonicString(code.toString());
   };
   return (
-    <section className="mnemonic">
-      <Button onClick={handleClickGenerate}>
-        Generate
-      </Button>
-      <p>{mnemonicString}</p>
-    </section>
+    <>
+      <section className="mnemonic">
+        <Button onClick={handleClickGenerate}>Generate</Button>
+        {mnemonicString && (
+          <div>
+            <p>{mnemonicString}</p>
+          </div>
+        )}
+      </section>
+      <section className="more-info">
+        <h3>Reference</h3>
+        <p>NOTE: BIP-39 is unanimously discouraged for implementations</p>
+        <p>See <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">external link</a></p>
+      </section>
+    </>
   );
 };
 
