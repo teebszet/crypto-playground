@@ -15,12 +15,12 @@ export const LandingListItem: React.FC<LandingListItemProps> = ({
   route,
 }) => {
   return (
-    <li>
-      <Link to={route}>
+    <Link to={route} className="action-item">
+      <li>
         <h3>{title}</h3>
         <p>{description}</p>
-      </Link>
-    </li>
+      </li>
+    </Link>
   );
 };
 

@@ -1,11 +1,19 @@
+@import '../styles/variables.scss';
+
 .landing-actions {
   &__header {
-
-  } 
+  }
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
-  } 
+    margin-top: 3rem;
+  }
+}
+
+.action-item {
+  padding: 2rem;
+  border: 1px solid $primary-color;
+  box-shadow: 5px 5px 5px #f2f2f2;
 }
