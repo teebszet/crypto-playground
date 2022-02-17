@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout';
 import Landing from './routes/Landing';
 import Mnemonic from './routes/Mnemonic';
 import HdSegWit from './routes/HdSegWit';
+import MultiSigP2SH from './routes/MultiSigP2SH';
 import './App.scss';
 
 export type RouteProps = {
@@ -27,12 +28,12 @@ const routes: RouteItem[] = [
   {
     Component: HdSegWit,
     route: '/hd-segwit',
-    title: 'HD SegWit',
+    title: 'HD SegWit Bitcoin Address',
     description:
       'Generate Hierarchical Deterministic (HD) Segregated Witness (SegWit) bitcoin address from a given seed and path',
   },
   {
-    Component: Mnemonic,
+    Component: MultiSigP2SH,
     route: '/multisig-p2sh',
     title: 'Multi-sig P2SH',
     description:

@@ -1,6 +1,8 @@
 @import '../styles/variables.scss';
 
 .main-layout {
+  margin-bottom: 5rem;
+
   &__header {
     display: grid;
     place-items: center;

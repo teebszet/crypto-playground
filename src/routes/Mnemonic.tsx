@@ -6,6 +6,7 @@ import './Mnemonic.scss';
 export const MnemonicContainer: React.FC = () => {
   const [mnemonicString, setMnemonicString] = useState<string | null>(null);
 
+  // TODO useMemo here
   const handleClickGenerate = () => {
     const code = generateMnemonic();
     setMnemonicString(code);
