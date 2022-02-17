@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Mnemonic from 'bitcore-mnemonic';
+import { generateMnemonic } from '../utils/bitcoin';
 import Button from '../components/Button';
 import './Mnemonic.scss';
 
@@ -7,9 +7,10 @@ export const MnemonicContainer: React.FC = () => {
   const [mnemonicString, setMnemonicString] = useState<string | null>(null);
 
   const handleClickGenerate = () => {
-    const code = new Mnemonic(Mnemonic.Words.ENGLISH);
-    setMnemonicString(code.toString());
+    const code = generateMnemonic();
+    setMnemonicString(code);
   };
+
   return (
     <>
       <section className="mnemonic">

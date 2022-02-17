@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import Mnemonic from 'bitcore-mnemonic';
+import { generateMnemonic, generateHdSegwitAddress } from '../utils/bitcoin';
 import Button from '../components/Button';
 import './HdSegWit.scss';
 
 export const HdSegWit: React.FC = () => {
   const [mnemonic, setMnemonic] = useState<any | null>(null);
+  const [segwitAddress, setSegwitAddress] = useState<any | null>(null);
 
   const handleClickGenerate = () => {
-    const code = new Mnemonic(Mnemonic.Words.ENGLISH);
-    setMnemonic(code);
+    const mnemonicWords = generateMnemonic();
+    setMnemonic(mnemonicWords);
+    setSegwitAddress(generateHdSegwitAddress(mnemonicWords));
   };
   return (
     <>
@@ -16,8 +18,8 @@ export const HdSegWit: React.FC = () => {
         <Button onClick={handleClickGenerate}>Generate</Button>
         {mnemonic && (
           <div>
-            <p>{mnemonic.toString()}</p>
-            <p>{mnemonic.toHDPrivateKey().toString()}</p>
+            <p>{mnemonic}</p>
+            <p>{segwitAddress}</p>
           </div>
         )}
       </section>
