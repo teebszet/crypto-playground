@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^5.3.3",
     "bitcoinjs-lib": "^6.0.1",
     "ethereum-cryptography": "^1.0.1",
+    "ethers": "^5.5.4",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",

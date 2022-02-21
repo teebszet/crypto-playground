@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Landing from './routes/Landing';
 import Mnemonic from './routes/Mnemonic';
 import HdSegWit from './routes/HdSegWit';
 import MultiSigP2SH from './routes/MultiSigP2SH';
+import EthereumConnection from './routes/EthereumConnection';
+import { ErrorContext } from './hooks/errorContext'
 import './App.scss';
 
 export type RouteProps = {
@@ -39,9 +42,17 @@ const routes: RouteItem[] = [
     description:
       'Generate an n-out-of-m Multisignature (multi-sig) Pay-To-Script-Hash (P2SH) bitcoin address, where n, m and public keys can be specified',
   },
+  {
+    Component: EthereumConnection,
+    route: '/ethereum-connection',
+    title: 'Ethereum Connection Demo',
+    description:
+      'Demo a connection to ethereum chain using ethers.js',
+  },
 ];
 
 export default function App() {
+  const [errorMessage, setErrorMessage] = useState('');
   return (
     <Router>
       <Switch>
@@ -50,9 +61,14 @@ export default function App() {
         </Route>
         {routes.map(({ Component, route, title, description }) => (
           <Route exact key={route} path={route}>
-            <MainLayout contentHeader={title} contentDescription={description}>
-              <Component />
-            </MainLayout>
+            <ErrorContext.Provider value={{ errorMessage, setErrorMessage }}>
+              <MainLayout
+                contentHeader={title}
+                contentDescription={description}
+              >
+                <Component />
+              </MainLayout>
+            </ErrorContext.Provider>
           </Route>
         ))}
       </Switch>

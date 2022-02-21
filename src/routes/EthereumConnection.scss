@@ -1,0 +1,22 @@
+@import '../styles/variables.scss';
+
+.ethereum-connection {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  margin: 3rem;
+
+  &__info {
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  p {
+    padding: 1rem;
+    background-color: rgba(200, 200, 200, 0.1);
+  }
+
+  button {
+    margin-bottom: 3rem;
+  }
+}

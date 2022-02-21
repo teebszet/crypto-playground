@@ -28,6 +28,19 @@
       text-transform: uppercase;
     }
   }
+
+  &__error {
+    &::before {
+      content: "\2757";
+      padding: 0.25rem;
+      margin-right: 0.5rem;
+      border: #e30100 1px solid;
+      border-radius: 1rem;
+    }
+    background-color: #e3010033;
+    padding: 1rem;
+  }
+
   &__content {
     max-width: 500px;
     margin: 0 auto;
