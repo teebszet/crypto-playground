@@ -42,8 +42,7 @@ export const toHex = (s: Uint8Array) => {
 };
 
 export const generateDerivedChildPublicKey = (hdKey: HDKey, index: number) => {
-  const derived = hdKey.deriveChild(index);
-  return derived;
+  return hdKey.deriveChild(index);
 };
 
 export const toP2WPKH = (publicKey: Uint8Array) => {
