@@ -18,7 +18,12 @@ A UI that demonstrates bitcoin concepts
 node 14.16
 npm 7.3
 
-## technical debt
+## main open source libraries used
 
-- create a favicon and store it in public/ along with config in manifest.json and edit
-  index.html. see https://realfavicongenerator.net/
+bitcoinjs-lib
+ethereum-cryptography
+ethers
+react
+typescript
+jest
+cypress

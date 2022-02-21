@@ -4,8 +4,16 @@ import { useErrorContext } from '../hooks/errorContext';
 import Button from '../components/Button';
 import './EthereumConnection.scss';
 
+type NetworkStatus = {
+  network: {
+    chainId: number;
+    name: string;
+  };
+  blockNumber: number;
+};
+
 export const EthereumConnection: React.FC = () => {
-  const [networkStatus, setNetworkStatus] = useState({});
+  const [networkStatus, setNetworkStatus] = useState<NetworkStatus | null>(null);
   const { setErrorMessage } = useErrorContext();
 
   const handleClickConnect = async () => {
@@ -14,7 +22,7 @@ export const EthereumConnection: React.FC = () => {
 
       const blockNumber = await provider?.getBlockNumber();
       const network = await provider?.getNetwork();
-      setNetworkStatus({blockNumber, network});
+      setNetworkStatus({ blockNumber, network });
     } catch (e) {
       setErrorMessage('Metamask is required!');
     }
