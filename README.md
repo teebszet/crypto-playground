@@ -20,10 +20,10 @@ npm 7.3
 
 ## main open source libraries used
 
-bitcoinjs-lib
-ethereum-cryptography
-ethers
-react
-typescript
-jest
-cypress
+* bitcoinjs-lib
+* ethereum-cryptography
+* ethers
+* react
+* typescript
+* jest
+* cypress
