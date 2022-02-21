@@ -1,8 +1,8 @@
-# bitcoin-playground
+# crypto-playground
 
 ## description
 
-A UI that demonstrates bitcoin concepts
+A UI that demonstrates crypto concepts
 
 ## getting started
 
