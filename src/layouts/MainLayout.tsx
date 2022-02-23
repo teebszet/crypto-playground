@@ -21,11 +21,9 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   return (
     <div className="main-layout">
       <header className="main-layout__header">
-        {history.length > 1 && ( // TODO compare with location
-          <div className="header__button-container">
-            <button onClick={handleClickBack}>{'←'}</button>
-          </div>
-        )}
+        <div className="header__button-container">
+          <button onClick={handleClickBack}>{'←'}</button>
+        </div>
         <h1>Crypto Playground</h1>
       </header>
       {
